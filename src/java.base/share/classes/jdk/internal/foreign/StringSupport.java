@@ -290,7 +290,8 @@ public final class StringSupport {
             // Comparing the charset to specific internal implementations avoids loading the class `StandardCharsets`
             if        (charset == sun.nio.cs.UTF_8.INSTANCE ||
                        charset == sun.nio.cs.ISO_8859_1.INSTANCE ||
-                       charset == sun.nio.cs.US_ASCII.INSTANCE) {
+                       charset == sun.nio.cs.US_ASCII.INSTANCE ||
+                       charset == Charset.forName("windows-1252")) {
                 return SINGLE_BYTE;
             } else if (charset instanceof sun.nio.cs.UTF_16LE ||
                        charset instanceof sun.nio.cs.UTF_16BE ||
